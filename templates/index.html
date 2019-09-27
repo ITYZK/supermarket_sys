@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width,initial-scale-1.0">
+        <meta name="author" content="yzk">
+        <meta name="description" content="测试CSS">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css')}}" />
+        
+        <script src="{{ url_for('static',filename='JS/index.js')}}"></script>
+        <title>登录</title>
+    </head>
+    <body background='{{ url_for("static",filename="image/bg3.jpg")}}'>
+        <div id="logn">
+            <p id="title">用户登录</p>
+            <form method="POST" id="log" name="login" action="{{ url_for('log')}}" onsubmit="return check_login()">
+                <table>
+                   <tr>
+                       <td><label>用户名: </label></td><td><input type="text" id="name" name="username" placeholder="用户名"></td>
+                   </tr> 
+                   <tr>
+                       <td><label>密&nbsp&nbsp 码: </label></td><td><input type="password" id="password" name="password" placeholder="密码"></td>
+                    </tr>
+                </table>
+                <p id="log_err">{{log_err}}</p>
+                <button type="submit" class="logn" name="submit">登录</button>
+                <a id="new" href='{{ url_for("reg")}}' >注册新用户</a>
+            </form>  
+        </div>
+        <footer>
+            <button  class="image" type="button" onclick="NextImage()"> &lt </button>
+            <button  class="image" type="button" onclick="NextImage()" > &gt </button>
+        </footer>
+
+    </body>
+</html>

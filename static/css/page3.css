@@ -1,0 +1,14 @@
+.find_term{
+    background-color: white;
+    height: 2.3rem;
+    margin-right: 1.2em;
+
+}
+
+.find_term:hover{
+    background-color: white;
+}
+
+.find_term{
+    margin-top: -3px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width,initial-scale-1.0">
+        <meta name="author" content="yzk">
+        <meta name="description" content="测试CSS">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css')}}" />
+        <script src="{{ url_for('static',filename='JS/jquery-3.4.1.min.js')}}"></script>
+        <script type='text/javascript' src="{{ url_for('static',filename='JS/index.js')}}"></script>
+
+        <title>注册</title>
+    </head>
+    <body background='{{ url_for("static",filename="image/bg3.jpg")}}'>
+        <div id='register'>
+            <a href="{{url_for('log')}}"><img src="{{ url_for('static',filename='image/left.png')}}" alt="returnbutton" name="return_button"></a>
+            <p id="title">用户注册</p>
+            <form method="POST" id="reg" name="register" action="{{ url_for('reg')}}" onsubmit="return check_register()">
+                <ul style="list-style-type: none">
+                    <li><label>用户名: </lable><input type="text" id="reg_name" name="uname" placeholder="用户名"><span id="reg_tip1"></span></li>
+                    <li><label>密&nbsp&nbsp 码: </lable><input type="password" id="reg_pwd" name="passwd" placeholder="密码"><span id="reg_tip2"></span></li>
+                    <li><label class='two'>确认密码: </lable><input type="password" id="reg_pwd2" name="passwd2" placeholder="确认密码"><span id="reg_tip3"></span></li>
+                    <li><label>手机号: </lable><input type="text" id="phone" name="phone" placeholder="手机号"><span id="reg_tip4"></span></li>
+                    <li><label>邮&nbsp&nbsp 箱: </lable><input type="email" id="email" name="email" placeholder="邮箱"><span id="reg_tip5"></span></li>
+                </ul>
+                <p id="reg_err">{{reg_err}}</p>
+                <button  type="submit" class="register">注册</button>
+                <a id="new" href="{{url_for('log')}}">登录</a>
+            </form>
+        </div>
+        <footer>
+            <button  class="image" type="button" onclick="NextImage()"> &lt </button>
+            <button  class="image" type="button" onclick="NextImage()" > &gt </button>
+        </footer>
+       
+    </body>
+</html>

@@ -1,0 +1,7 @@
+{
+"db_server":"localhost",
+"db_sport":3306,
+"db_user":"yzk",
+"db_password":"passwordyzk",
+"db_name":"yzksql"
+}

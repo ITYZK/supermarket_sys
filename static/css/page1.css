@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 10px;
+}
+div.master{
+    position: relative;
+    left: 70px;
+    top:10px;
+    width: 90%;
+    height:750px;
+    border: 3px solid white;
+    overflow-x: hidden; 
+    /* overflow-y:scroll;  */
+    background-color: rgba(200, 192, 192, 0.74);
+    border-radius: 5%;
+}
+.master::-webkit-scrollbar {
+    display: none;
+}
+
+.top{
+    
+    height: 50px;
+    background-color: white; 
+    float: top;
+    text-align: center; 
+}
+.top p{
+    padding-top: 3px;
+    font-size: 24px;
+    letter-spacing: 8px;
+}
+.left{
+    background-color: rgb(114, 111, 111);
+    height: 700px;
+    width: 10%;
+    float: left;
+}
+.ul{
+    width: 15%;
+    list-style-type: none;
+}
+li{
+    padding-top: 20px;
+    width: 100%;
+    height: 30px;
+    list-style: none;
+}
+li a{
+    position: relative;
+    left: 20px;
+    bottom:5px;
+    color: white; 
+    font-size: 22px;
+    text-decoration: none;
+    letter-spacing: 5px;
+    text-align: center;
+
+}
+
+li:hover{
+    background-color: rgb(0, 0, 0);
+}
+li#here{
+    background-color: rgb(0, 0, 0);
+}
+
+.content{
+    width: 90%;
+    height: 700px;
+    float: right;
+}
+img#gif{
+    float: center;
+    width: 50%;
+  
+    margin-left:10%; 
+}
+h1{
+    font-size: 60px;
+    margin: 20% 0;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+#logout{
+    float: right;
+    margin-right: 3%;
+    margin-top: -1%;
+    font-size: 15px;
+}
+#logout:hover{
+    font-size: 17px;
+}

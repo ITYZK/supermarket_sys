@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width,initial-scale-1.0">
+        <meta name="author" content="yzk">
+        <meta name="description" content="测试CSS">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/page1.css')}}" />
+        <script type='text/javascript' src="{{ url_for('static',filename='JS/index.js')}}"></script>
+        
+        <title>管理系统</title>
+    </head>
+    <body background='{{ url_for("static",filename="image/bg8.jpg")}}'>
+        <div class="master" >
+            <div class="top" >
+                <p>welcome</p>
+                <a id="logout" href="{{url_for('logout')}}">退出登录</a>
+            </div>
+            <div>
+                <div class="left">
+                        <ul >
+                            <li id="here"><a href="{{url_for('page1')}}">首&nbsp;&nbsp;&nbsp;页</a></li>
+                            <li ><a href="{{url_for('page2')}}">查看库存</a></li>
+                            <li><a href="{{url_for('page3')}}">查找信息</a></li>
+                            <li ><a href="{{url_for('page4')}}">增加信息</a></li>
+                            <li ><a href="{{url_for('page5')}}">删除信息</a></li>
+                            <li ><a href="{{url_for('page6')}}">修改信息</a></li>
+                    </ul>
+                </div>
+                    <div class="content" >
+                        <div>
+                            <h1>欢迎来到xxxx超市管理系统</h1>
+                        </div>
+                        
+                    </div>
+                
+            </div>
+        </div>
+        
+        <!-- <footer>
+                <button  class="image" type="button" onclick="NextImage()"> &lt </button>
+                <button  class="image" type="button" onclick="NextImage()" > &gt </button>
+            </footer> -->
+    </body>
+
+</html>

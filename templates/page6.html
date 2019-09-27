@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width,initial-scale-1.0">
+        <meta name="author" content="yzk">
+        <meta name="description" content="测试CSS">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/page1.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/page2.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/page3.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/page6.css')}}" />
+        <script type='text/javascript' src="{{ url_for('static',filename='JS/jquery-3.4.1.min.js')}}"></script>
+        <script type='text/javascript' src="{{ url_for('static',filename='JS/index.js')}}"></script>
+        <script type='text/javascript' src="{{ url_for('static',filename='JS/page6.js')}}"></script>
+        
+        <title>管理系统</title>
+    </head>
+    <body background='{{ url_for("static",filename="image/bg8.jpg")}}'>
+        <div class="master" >
+            <div class="top" >
+                <p>welcome</p>
+                <a id="logout" href="{{url_for('logout')}}">退出登录</a>
+            </div>
+            <div>
+                <div class="left">
+                        <ul >
+                            <li ><a href="{{url_for('page1')}}">首&nbsp;&nbsp;&nbsp;页</a></li>
+                            <li ><a href="{{url_for('page2')}}">查看库存</a></li>
+                            <li ><a href="{{url_for('page3')}}">查找信息</a></li>
+                            <li ><a href="{{url_for('page4')}}">增加信息</a></li>
+                            <li ><a href="{{url_for('page5')}}">删除信息</a></li>
+                            <li id="here"><a href="{{url_for('page6')}}">修改信息</a></li>
+                        </ul>
+                </div>
+                    <div class="content" >
+                        <div>
+                                <div class="head">
+                                    <div>
+                                        <form method="GET" action="{{url_for('page6_op')}}" >
+                                            <table>
+                                                <tr>
+                                                    <td><label for="term" id="term">选择查找条件:</label></td>
+                                                    <td>
+                                                        <select name="term" class="term">
+                                                        <option>商品编号</option>
+                                                        <option>商品名称</option>
+                                                        <option>商品数量</option>
+                                                        <option>商品价格</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <label id="find_term">输入查找条件的商品信息:</label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="find_term" name="find_term">
+                                                    </td>
+                                                    <td><button type="submit" id="select">查&nbsp询</button></td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="con">
+                                    <table>
+                                        <tr><td colspan="6"><p class="msg" id="msg">{{err}}</p></td></tr>
+                                        <tr id="table_head">
+                                            <th>商品编号</th>
+                                            <th>商品名称</th>
+                                            <th>商品数量</th>
+                                            <th>商品规格</th>
+                                            <th>商品价格</th>
+                                            <th>操 作</th>
+                                        </tr>
+                                        
+                                      
+                                        {% for id,name,size,count,price in res %}
+                                                <tr class='del_good'>
+                                                    <td class="id" ><p>{{id}}</p></td>
+                                                    <td class="name" >{{name}}</td>
+                                                    <td class="num" >{{count}}</td>
+                                                    <td class="size">{{size}}</td>
+                                                    <td class="price">{{price}}</td>
+                                                    <td><button type="button" onclick="sub()">修改</button></td>
+                                                </tr>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,60 @@
+div.head{
+    background-color: black;
+    width: 100%;
+    height: 70px;
+
+}
+.head div{
+    padding-top: 10px;
+}
+#term,#find_term{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.term{
+    width: 100px;
+    height: 25px;
+    font-size: 13px;
+}
+
+button#select{
+    font-size: 14px;
+    padding:3px;
+    border-radius:5px;
+}
+button#select:hover{
+    font-size: 15px;
+}
+.con{
+    overflow-y:scroll; 
+    min-height: 625px;
+}
+
+.con table{
+    border-collapse: collapse;  /* 合并边框 */
+    width: 100%;
+}
+
+tr#table_head{
+    background-color: rgb(221, 220, 220);
+}
+#table_head th{
+    padding: 7px;
+    border: 2px solid rgb(7, 7, 7);
+    font-size: 20px;
+}
+
+
+.con table td{
+    border: 2px solid rgb(7, 7, 7);
+    padding: 5px;
+    font-size: 15px;
+    text-align: left;
+    background-color: rgb(221, 220, 220);
+}
+
+p#msg{
+    text-align: center;
+    font-weight: 600;
+}
